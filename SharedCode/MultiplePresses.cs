@@ -6,31 +6,30 @@ namespace PS4MacroScripts
     {
         public static void Press(string keytopress, int TimesPress, int waiter, ScriptBase script)
         {
+            keytopress = keytopress.ToLower();
             while (TimesPress > 0)
             {
                 switch (keytopress)
                 {
-                    case "Cross":
+                    case "cross":
                         script.Press(new DualShockState() { Cross = true });
                         break;
-                    case "Circle":
+                    case "circle":
                         script.Press(new DualShockState() { Circle = true });
                         break;
-                    case "DPad_Right":
+                    case "dpad_right":
                         script.Press(new DualShockState() { DPad_Right = true });
                         break;
-                    case "DPad_Left":
+                    case "dpad_left":
                         script.Press(new DualShockState() { DPad_Left = true });
                         break;
-                    case "DPad_Down":
+                    case "dpad_down":
                         script.Press(new DualShockState() { DPad_Down = true });
                         break;
-                    case "DPad_Up":
+                    case "dpad_up":
                         script.Press(new DualShockState() { DPad_Up = true });
                         break;
                 }
-
-
                 script.Sleep(waiter);
                 TimesPress--;
             }
