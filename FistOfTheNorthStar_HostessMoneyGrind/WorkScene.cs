@@ -13,101 +13,101 @@ namespace PS4MacroScripts
 
         private static RectMap TitleMap = new RectMap()
         {
-            X = 0,
-            Y = 0,
-            Width = 0,
-            Height = 0,
-            Hash = 0
+            X = 503,
+            Y = 114,
+            Width = 78,
+            Height = 18,
+            Hash = 236288894927011330
         };
 
         private static RectMap SalesMap = new RectMap()
         {
-            X = 0,
-            Y = 0,
-            Width = 0,
-            Height = 0,
-            Hash = 0
+            X = 671,
+            Y = 111,
+            Width = 21,
+            Height = 22,
+            Hash = 3410814423666176
         };
 
         private static RectMap SkillStatsMap = new RectMap()
         {
-            X = 0,
-            Y = 0,
-            Width = 0,
-            Height = 0,
-            Hash = 0
+            X = 51,
+            Y = 119,
+            Width = 178,
+            Height = 13,
+            Hash = 18446742974197924095
         };
 
         private static RectMap t1GuestMap = new RectMap()
         {
-            X = 0,
-            Y = 0,
-            Width = 0,
-            Height = 0,
-            Hash = 0
+            X = 479,
+            Y = 187,
+            Width = 44,
+            Height = 47,
+            Hash = 18446744071545290752
         };
 
         private static RectMap t1GirlMap = new RectMap()
         {
-            X = 0,
-            Y = 0,
-            Width = 0,
-            Height = 0,
-            Hash = 0
+            X = 350,
+            Y = 195,
+            Width = 37,
+            Height = 35,
+            Hash = 18446743521789476864
         };
 
         private static RectMap t2GuestMap = new RectMap()
         {
-            X = 0,
-            Y = 0,
-            Width = 0,
-            Height = 0,
-            Hash = 0
+            X = 479,
+            Y = 334,
+            Width = 44,
+            Height = 47,
+            Hash = 18446743521789476864
         };
 
         private static RectMap t2GirlMap = new RectMap()
         {
-            X = 0,
-            Y = 0,
-            Width = 0,
-            Height = 0,
-            Hash = 0
+            X = 350,
+            Y = 342,
+            Width = 37,
+            Height = 35,
+            Hash = 18446743521789476864
         };
 
         private static RectMap t3GuestMap = new RectMap()
         {
-            X = 0,
-            Y = 0,
-            Width = 0,
-            Height = 0,
-            Hash = 0
+            X = 844,
+            Y = 187,
+            Width = 44,
+            Height = 47,
+            Hash = 18446744071293632512
         };
 
         private static RectMap t3GirlMap = new RectMap()
         {
-            X = 0,
-            Y = 0,
-            Width = 0,
-            Height = 0,
-            Hash = 0
+            X = 799,
+            Y = 195,
+            Width = 37,
+            Height = 35,
+            Hash = 18446743520716718336
         };
 
         private static RectMap t4GuestMap = new RectMap()
         {
-            X = 0,
-            Y = 0,
-            Width = 0,
-            Height = 0,
-            Hash = 0
+            X = 844,
+            Y = 334,
+            Width = 44,
+            Height = 47,
+            Hash = 18446743521789476864
         };
 
         private static RectMap t4GirlMap = new RectMap()
         {
-            X = 0,
-            Y = 0,
-            Width = 0,
-            Height = 0,
-            Hash = 0
+            X = 799,
+            Y = 342,
+            Width = 37,
+            Height = 35,
+            Hash = 18446743521789476864
         };
 
         public override bool Match(ScriptBase script)
