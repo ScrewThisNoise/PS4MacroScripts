@@ -98,15 +98,13 @@ namespace PS4MacroScripts
                 script.MatchTemplate(N3StatusMap, 98) || script.MatchTemplate(N4StatusMap, 98) ||
                 script.MatchTemplate(N5StatusMap, 98) || script.MatchTemplate(N6StatusMap, 98))
             {
-                if (script.MatchTemplate(selectMissionMap, 98))
-                    MultiplePresses.Press("DPad_Down", 1, waitTime, script);
+                MultiplePresses.Press("DPad_Down", 1, waitTime, script);
                 MultiplePresses.Press("Cross", 2, waitTime, script); // Entered Assign Floor Crew
             }
             else
             {
                 if (!script.MatchTemplate(selectMissionMap, 98))
                 {
-                    MultiplePresses.Press("DPad_Up", 1, waitTime, script);
                     MultiplePresses.Press("Cross", 1, waitTime, script);
                     MultiplePresses.Press("DPad_Up", 1, waitTime, script);
                     MultiplePresses.Press("Cross", 2, waitTime, script);

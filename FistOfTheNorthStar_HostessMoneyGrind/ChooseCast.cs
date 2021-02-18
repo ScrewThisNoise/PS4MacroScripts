@@ -97,6 +97,7 @@ namespace PS4MacroScripts
 
             // Done! Returning to Main Menu!
             MultiplePresses.Press("Circle", 1, waitTime, script);
+            MultiplePresses.Press("DPad_Up", 1, waitTime, script);
         }
     }
 }

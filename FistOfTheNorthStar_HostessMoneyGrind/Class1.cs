@@ -12,9 +12,12 @@ namespace PS4MacroScripts
     {
         public Script()
         {
-            Config.Name = "Fist of the North Star: Paradise Lost (DeathBatting Expert)";
+            Config.Name = "Fist of the North Star - Paradise Lost (Hostess Minigame Money Grinding)";
+            Logger.Initiate(Config.Name);
+            Logger.Writer($"Log for {Config.Name} is running.");
             Config.Scenes = new List<Scene>()
             {
+                new WorkScene(),
                 new StartScreen(),
                 new ChooseCast()
             };
@@ -27,7 +30,6 @@ namespace PS4MacroScripts
 
         public override void Update()
         {
-            var logFile = "DeathBattingExpert.log";
             HandleScenes(scene =>
             {
                 Console.WriteLine(scene.Name);

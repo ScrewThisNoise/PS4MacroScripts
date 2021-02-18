@@ -20,24 +20,6 @@ namespace PS4MacroScripts
             Hash = 236288894927011330
         };
 
-        private static RectMap SalesMap = new RectMap()
-        {
-            X = 671,
-            Y = 111,
-            Width = 21,
-            Height = 22,
-            Hash = 3410814423666176
-        };
-
-        private static RectMap SkillStatsMap = new RectMap()
-        {
-            X = 51,
-            Y = 119,
-            Width = 178,
-            Height = 13,
-            Hash = 18446742974197924095
-        };
-
         private static RectMap t1GuestMap = new RectMap()
         {
             X = 479,
@@ -47,30 +29,12 @@ namespace PS4MacroScripts
             Hash = 18446744071545290752
         };
 
-        private static RectMap t1GirlMap = new RectMap()
-        {
-            X = 350,
-            Y = 195,
-            Width = 37,
-            Height = 35,
-            Hash = 18446743521789476864
-        };
-
         private static RectMap t2GuestMap = new RectMap()
         {
             X = 479,
             Y = 334,
             Width = 44,
             Height = 47,
-            Hash = 18446743521789476864
-        };
-
-        private static RectMap t2GirlMap = new RectMap()
-        {
-            X = 350,
-            Y = 342,
-            Width = 37,
-            Height = 35,
             Hash = 18446743521789476864
         };
 
@@ -83,15 +47,6 @@ namespace PS4MacroScripts
             Hash = 18446744071293632512
         };
 
-        private static RectMap t3GirlMap = new RectMap()
-        {
-            X = 799,
-            Y = 195,
-            Width = 37,
-            Height = 35,
-            Hash = 18446743520716718336
-        };
-
         private static RectMap t4GuestMap = new RectMap()
         {
             X = 844,
@@ -101,72 +56,79 @@ namespace PS4MacroScripts
             Hash = 18446743521789476864
         };
 
-        private static RectMap t4GirlMap = new RectMap()
-        {
-            X = 799,
-            Y = 342,
-            Width = 37,
-            Height = 35,
-            Hash = 18446743521789476864
-        };
-
         public override bool Match(ScriptBase script)
         {
-            return script.MatchTemplate(TitleMap, 98);
+            return script.MatchTemplate(TitleMap, 95);
         }
+
+        private bool guest1served = true;
+        private bool guest2served = true;
+        private bool guest3served = true;
+        private bool guest4served = true;
 
         public override void OnMatched(ScriptBase script)
         {
             var waitTime = 10;
-            // Checking if sales and skill is 0 so that the arrow can get in position
-            if (script.MatchTemplate(SalesMap, 98) && script.MatchTemplate(SkillStatsMap, 98))
-            {
-                // RRRN
-                MultiplePresses.Press("DPad_Right", 3, waitTime, script);
-            }
 
-            // Cursor defaults at the girl right for Table 1 (the one in the upper left), and returns there everytime a placement is filled.
+            // Resetting guest served status if applicable
+            if(script.MatchTemplate(t1GuestMap))
+                guest1served = false;
+            if (script.MatchTemplate(t2GuestMap))
+                guest2served = false;
+            if (script.MatchTemplate(t3GuestMap))
+                guest3served = false;
+            if (script.MatchTemplate(t4GuestMap))
+                guest4served = false;
+
+            // Cursor defaults at the first girl in the leftmost list, and returns there everytime a customer is served.
 
             // Table 1
-            if (script.MatchTemplate(t1GuestMap, 98) && !script.MatchTemplate(t1GirlMap, 98))
+            if (!script.MatchTemplate(t1GuestMap) && !guest1served)
             {
-                MultiplePresses.Press("Cross", 2, waitTime, script);
-                MultiplePresses.Press("DPad_Left", 2, waitTime, script);
+                Logger.Writer("T1!");
+                MultiplePresses.Press("DPad_Right", 1, waitTime, script);
                 MultiplePresses.Press("Cross", 2, waitTime, script);
                 MultiplePresses.Press("DPad_Right", 2, waitTime, script);
+                MultiplePresses.Press("Cross", 2, waitTime, script);
+                MultiplePresses.Press("DPad_Left", 3, waitTime, script);
+                guest1served = true;
             }
 
             // Table 2
-            if (script.MatchTemplate(t2GuestMap, 98) && !script.MatchTemplate(t2GirlMap, 98))
+            if (!script.MatchTemplate(t2GuestMap) && !guest2served)
             {
+                MultiplePresses.Press("DPad_Right", 1, waitTime, script);
+                MultiplePresses.Press("DPad_Down", 1, waitTime, script);
+                MultiplePresses.Press("Cross", 2, waitTime, script);
+                MultiplePresses.Press("DPad_Right", 2, waitTime, script);
+                MultiplePresses.Press("Cross", 2, waitTime, script);
+                MultiplePresses.Press("DPad_Up", 1, waitTime, script);
+                MultiplePresses.Press("DPad_Left", 3, waitTime, script);
+                guest2served = true;
+            }
+
+            // Table 3
+            if (!script.MatchTemplate(t3GuestMap) && !guest3served)
+            {
+                MultiplePresses.Press("DPad_Left", 1, waitTime, script);
+                MultiplePresses.Press("Cross", 2, waitTime, script);
+                MultiplePresses.Press("DPad_Left", 2, waitTime, script);
+                MultiplePresses.Press("Cross", 2, waitTime, script);
+                MultiplePresses.Press("DPad_Right", 3, waitTime, script);
+                guest3served = true;
+            }
+
+            // Table 4
+            if (!script.MatchTemplate(t4GuestMap) && !guest4served)
+            {
+                MultiplePresses.Press("DPad_Left", 1, waitTime, script);
                 MultiplePresses.Press("DPad_Down", 1, waitTime, script);
                 MultiplePresses.Press("Cross", 2, waitTime, script);
                 MultiplePresses.Press("DPad_Left", 2, waitTime, script);
                 MultiplePresses.Press("Cross", 2, waitTime, script);
-                MultiplePresses.Press("DPad_Right", 2, waitTime, script);
                 MultiplePresses.Press("DPad_Up", 1, waitTime, script);
-            }
-
-            // Table 3
-            if (script.MatchTemplate(t3GuestMap, 98) && !script.MatchTemplate(t3GirlMap, 98))
-            {
-                MultiplePresses.Press("DPad_Right", 1, waitTime, script);
-                MultiplePresses.Press("Cross", 2, waitTime, script);
-                MultiplePresses.Press("DPad_Right", 2, waitTime, script);
-                MultiplePresses.Press("Cross", 2, waitTime, script);
-                MultiplePresses.Press("DPad_Left", 3, waitTime, script);
-            }
-
-            // Table 4
-            if (script.MatchTemplate(t4GuestMap, 98) && !script.MatchTemplate(t4GirlMap, 98))
-            {
-                MultiplePresses.Press("DPad_Right", 1, waitTime, script);
-                MultiplePresses.Press("DPad_Down", 1, waitTime, script);
-                MultiplePresses.Press("Cross", 2, waitTime, script);
-                MultiplePresses.Press("DPad_Right", 2, waitTime, script);
-                MultiplePresses.Press("Cross", 2, waitTime, script);
-                MultiplePresses.Press("DPad_Left", 3, waitTime, script);
-                MultiplePresses.Press("DPad_Up", 1, waitTime, script);
+                MultiplePresses.Press("DPad_Right", 3, waitTime, script);
+                guest4served = true;
             }
         }
     }
