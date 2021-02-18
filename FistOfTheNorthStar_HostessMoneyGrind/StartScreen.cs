@@ -103,12 +103,12 @@ namespace PS4MacroScripts
             }
             else
             {
-                if (!script.MatchTemplate(selectMissionMap, 98))
-                {
-                    MultiplePresses.Press("Cross", 1, waitTime, script);
-                    MultiplePresses.Press("DPad_Up", 1, waitTime, script);
-                    MultiplePresses.Press("Cross", 2, waitTime, script);
-                }
+                MultiplePresses.Press("Cross", 1, waitTime, script);
+                MultiplePresses.Press("DPad_Up", 1, waitTime, script);
+                MultiplePresses.Press("Cross", 2, waitTime, script);
+                MultiplePresses.Press("Cross", 1, waitTime, script);
+                script.Sleep(1000);
+                MultiplePresses.Press("Cross", 1, waitTime, script);
             }
         }
     }

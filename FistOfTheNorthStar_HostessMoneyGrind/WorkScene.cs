@@ -85,7 +85,7 @@ namespace PS4MacroScripts
             // Table 1
             if (!script.MatchTemplate(t1GuestMap) && !guest1served)
             {
-                Logger.Writer("T1!");
+                Logger.Writer("Guest arrived at Table 1, serving on him!");
                 MultiplePresses.Press("DPad_Right", 1, waitTime, script);
                 MultiplePresses.Press("Cross", 2, waitTime, script);
                 MultiplePresses.Press("DPad_Right", 2, waitTime, script);
@@ -97,6 +97,7 @@ namespace PS4MacroScripts
             // Table 2
             if (!script.MatchTemplate(t2GuestMap) && !guest2served)
             {
+                Logger.Writer("Guest arrived at Table 2, serving on him!");
                 MultiplePresses.Press("DPad_Right", 1, waitTime, script);
                 MultiplePresses.Press("DPad_Down", 1, waitTime, script);
                 MultiplePresses.Press("Cross", 2, waitTime, script);
@@ -110,6 +111,7 @@ namespace PS4MacroScripts
             // Table 3
             if (!script.MatchTemplate(t3GuestMap) && !guest3served)
             {
+                Logger.Writer("Guest arrived at Table 3, serving on him!");
                 MultiplePresses.Press("DPad_Left", 1, waitTime, script);
                 MultiplePresses.Press("Cross", 2, waitTime, script);
                 MultiplePresses.Press("DPad_Left", 2, waitTime, script);
@@ -121,6 +123,7 @@ namespace PS4MacroScripts
             // Table 4
             if (!script.MatchTemplate(t4GuestMap) && !guest4served)
             {
+                Logger.Writer("Guest arrived at Table 4, serving on him!");
                 MultiplePresses.Press("DPad_Left", 1, waitTime, script);
                 MultiplePresses.Press("DPad_Down", 1, waitTime, script);
                 MultiplePresses.Press("Cross", 2, waitTime, script);

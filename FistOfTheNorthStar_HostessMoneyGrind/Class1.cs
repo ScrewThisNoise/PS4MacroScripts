@@ -19,7 +19,8 @@ namespace PS4MacroScripts
             {
                 new WorkScene(),
                 new StartScreen(),
-                new ChooseCast()
+                new ChooseCast(),
+                new MissionResults()
             };
         }
 
