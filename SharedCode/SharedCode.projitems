@@ -9,6 +9,7 @@
     <Import_RootNamespace>SharedCode</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Logger.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)MultiplePresses.cs" />
   </ItemGroup>
 </Project>
