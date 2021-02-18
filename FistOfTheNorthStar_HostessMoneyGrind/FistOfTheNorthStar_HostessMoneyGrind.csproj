@@ -48,6 +48,7 @@
     <Compile Include="ChooseCast.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="MissionResults.cs" />
+    <Compile Include="PreMenu.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StartScreen.cs" />
     <Compile Include="WorkScene.cs" />

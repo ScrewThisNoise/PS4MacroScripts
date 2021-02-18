@@ -11,15 +11,6 @@ namespace PS4MacroScripts
     {
         public override string Name => "Hostess_TitleScreen";
 
-        private static RectMap selectMissionMap = new RectMap()
-        {
-            X = 120,
-            Y = 184,
-            Width = 89,
-            Height = 14,
-            Hash = 13741739442038
-        };
-
         private static RectMap MenuMap = new RectMap()
         {
             X = 103,

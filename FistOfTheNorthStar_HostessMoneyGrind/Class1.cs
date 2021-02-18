@@ -20,6 +20,7 @@ namespace PS4MacroScripts
                 new WorkScene(),
                 new StartScreen(),
                 new ChooseCast(),
+                new PreMenu(),
                 new MissionResults()
             };
         }
