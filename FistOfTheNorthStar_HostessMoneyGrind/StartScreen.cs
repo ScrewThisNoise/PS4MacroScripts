@@ -82,18 +82,20 @@ namespace PS4MacroScripts
         public override void OnMatched(ScriptBase script)
         {
             var waitTime = 500;
-
+            Logger.Writer("Reached Main Menu, checking if the girls need a break...");
             // Checking if hosts need a break
 
             if (script.MatchTemplate(N1StatusMap, 98) || script.MatchTemplate(N2StatusMap, 98) ||
                 script.MatchTemplate(N3StatusMap, 98) || script.MatchTemplate(N4StatusMap, 98) ||
                 script.MatchTemplate(N5StatusMap, 98) || script.MatchTemplate(N6StatusMap, 98))
             {
+                Logger.Writer("Yup, girls need a break, proceeding to Assign Floor Crew...");
                 MultiplePresses.Press("DPad_Down", 1, waitTime, script);
                 MultiplePresses.Press("Cross", 2, waitTime, script); // Entered Assign Floor Crew
             }
             else
             {
+                Logger.Writer("Nope, they're all good, moving on to the shift...");
                 MultiplePresses.Press("Cross", 1, waitTime, script);
                 MultiplePresses.Press("DPad_Up", 1, waitTime, script);
                 MultiplePresses.Press("Cross", 2, waitTime, script);

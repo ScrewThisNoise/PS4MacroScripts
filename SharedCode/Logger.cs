@@ -6,6 +6,7 @@ namespace PS4MacroScripts
     public static class Logger
     {
         public static StreamWriter MacroLogger { get; set; }
+        public static string LastSceneName { get; set; }
 
         public static void Initiate(string Script)
         {
@@ -42,6 +43,11 @@ namespace PS4MacroScripts
             {
                 Console.WriteLine(e);
             }
+        }
+
+        public static void LastScene(string input)
+        {
+            LastSceneName = input;
         }
     }
 }

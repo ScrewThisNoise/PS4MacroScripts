@@ -22,23 +22,35 @@ namespace PS4MacroScripts
 
         private static RectMap PreMenu2Map = new RectMap()
         {
-            X = 279,
-            Y = 227,
-            Width = 62,
-            Height = 46,
-            Hash = 8354123282302074237
+            X = 840,
+            Y = 596,
+            Width = 12,
+            Height = 12,
+            Hash = 13935049962468303809
+        };
+
+        private static RectMap PreMenu3Map = new RectMap()
+        {
+            X = 397,
+            Y = 303,
+            Width = 207,
+            Height = 24,
+            Hash = 75314390597380
         };
 
         public override bool Match(ScriptBase script)
         {
-            return script.MatchTemplate(PreMenuMap) || script.MatchTemplate(PreMenu2Map);
+            return script.MatchTemplate(PreMenuMap) || script.MatchTemplate(PreMenu2Map) || script.MatchTemplate(PreMenu3Map);
         }
 
         public override void OnMatched(ScriptBase script)
         {
             var waitTime = 10;
 
-            Logger.Writer("In the PreMenu, moving on...");
+            if(Logger.LastSceneName != Name)
+                Logger.Writer("In the PreMenu, moving on...");
+            Logger.LastScene(Name);
+
             // Just pressing X till it goes away
             MultiplePresses.Press("Cross", 1, waitTime, script);
         }

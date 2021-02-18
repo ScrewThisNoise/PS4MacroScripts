@@ -39,6 +39,7 @@ namespace PS4MacroScripts
             var waitTime = 500;
             if (script.MatchTemplate(HinaMap, 98))
             {
+                Logger.Writer("Looks like it's time for the A-Team, let's get them ready for their shift...");
                 MultiplePresses.Press("Cross", 1, waitTime, script); // Selected Hina
                 MultiplePresses.Press("DPad_Right", 1, waitTime, script);
                 MultiplePresses.Press("Cross", 1, waitTime, script);
@@ -65,6 +66,7 @@ namespace PS4MacroScripts
             }
             else
             {
+                Logger.Writer("Looks like it's time for the B-Team, let's get them ready for their shift...");
                 MultiplePresses.Press("DPad_Down", 1, waitTime, script);
                 MultiplePresses.Press("DPad_Right", 2, waitTime, script);
                 MultiplePresses.Press("Cross", 1, waitTime, script); // Selected Jacqueline
@@ -96,6 +98,7 @@ namespace PS4MacroScripts
             }
 
             // Done! Returning to Main Menu!
+            Logger.Writer("Shift staffed, returning to main menu...");
             MultiplePresses.Press("Circle", 1, waitTime, script);
             MultiplePresses.Press("DPad_Up", 1, waitTime, script);
         }

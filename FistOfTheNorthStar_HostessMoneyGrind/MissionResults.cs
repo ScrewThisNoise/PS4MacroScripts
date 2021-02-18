@@ -31,13 +31,15 @@ namespace PS4MacroScripts
 
         public override bool Match(ScriptBase script)
         {
-            Logger.Writer("In the endscreen, moving on...");
             return script.MatchTemplate(missionResultsMap) || script.MatchTemplate(checkstatusMap);
         }
 
         public override void OnMatched(ScriptBase script)
         {
             var waitTime = 10;
+            if (Logger.LastSceneName != Name)
+                Logger.Writer("In the endscreen, moving on...");
+            Logger.LastScene(Name);
 
             // Just pressing X till it goes away
             MultiplePresses.Press("Cross", 1, waitTime, script);
